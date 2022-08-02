@@ -2,6 +2,7 @@
 
 resume template I use
 
+<p align="center">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/red1.png" alt="screenshot" style="width: 30%;">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/cyan1.png" alt="screenshot" style="width: 30%;">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/purple1.png" alt="screenshot" style="width: 30%;">
@@ -12,6 +13,7 @@ resume template I use
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/orange1.png" alt="screenshot" style="width: 30%;">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/gray1.png" alt="screenshot" style="width: 30%;">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/dark1.png" alt="screenshot" style="width: 30%;">
+</p>
 
 ## how to use
 
