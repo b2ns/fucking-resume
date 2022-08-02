@@ -10,11 +10,11 @@ import avatar from './avatar.jpeg';
 export default {
   name: { value: '抓根宝', icon: 'user-circle' },
   // optional
-  job: { value: '双修法师', icon: 'r-dot-circle' },
+  job: { value: '职业法师', icon: 'r-dot-circle' },
   phone: { value: '110119911**', icon: 'phone' },
   // optional
   city: { value: '天际省', icon: 'map-marker' },
-  email: { value: 'zhuagenbao@mail.com', icon: 'envelope' },
+  email: { value: 'dragonborn@mail.com', icon: 'envelope' },
   // optional
   link: {
     url: 'https://github.com/****',
@@ -40,7 +40,7 @@ export default {
       {
         college: '高吼峰修道院',
         time: '2066.9-2070.7',
-        major: '龙吼',
+        major: '龙吼养成',
         degree: '龙裔',
       },
     ],
@@ -70,7 +70,7 @@ export default {
         // optional
         title: '大法师',
         // optional
-        events: ['领导公会革命，开创法系双修新纪元'],
+        events: ['领导公会革命，开创法系新纪元'],
       },
       {
         company: '雪漫城',
@@ -90,7 +90,7 @@ export default {
         // optional
         desc: '屠杀恶龙奥杜因',
         events: [
-          '主要屠龙负责人，致力于杀死爱叫自己Dovahkiin(龙语)的奥杜因',
+          '主要屠龙负责人，致力于消灭爱说Dovahkiin(龙语)的奥杜因',
           '为增强自身能力，单刷小龙，吸收龙魂，解锁龙吼之力，被膝盖中箭的帝国士兵看见，并确认了龙裔的身份',
           '为精进屠龙技能，师从龙吼大师灰胡子，习得风暴召唤、烈焰吐息、<b>龙魂撕裂</b>等技能',
           '通过阅读上古卷轴，发现奥杜因藏身于英灵殿，只身前往英灵殿，与恶龙鏖战，一击龙魂撕裂将恶龙击落，跟着一顿魔法输出，将其成功击杀',
@@ -108,7 +108,7 @@ export default {
         ],
       },
       {
-        name: '龙裔(Dragonborn)',
+        name: '龙裔',
         // optional
         desc: '杀死假龙裔秘拉克',
         events: [
