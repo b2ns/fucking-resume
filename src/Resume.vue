@@ -202,6 +202,7 @@ const {
     background-color: var(--primary-color);
     color: var(--text-color-invert);
     font-size: var(--fs-lg);
+    transition: background-color var(--transition-time);
     &-left {
       text-align: center;
     }
@@ -230,6 +231,7 @@ const {
     color: var(--text-color-invert);
     text-align: right;
     font-size: var(--fs-xs);
+    transition: background-color var(--transition-time);
   }
   &__item {
     position: relative;

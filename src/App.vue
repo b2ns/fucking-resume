@@ -1,7 +1,6 @@
 <script setup>
+import { ref } from 'vue';
 import Resume from './Resume.vue';
-
-const print = () => window.print();
 
 const themes = [
   '#e22b2b',
@@ -16,9 +15,15 @@ const themes = [
   '#000',
 ];
 
+const currentTheme = ref(themes[3]);
+
 const changeTheme = (theme) => {
+  currentTheme.value = theme;
   document.documentElement.style.setProperty('--primary-color', theme);
 };
+changeTheme(currentTheme.value);
+
+const print = () => window.print();
 </script>
 
 <template>
@@ -31,6 +36,7 @@ const changeTheme = (theme) => {
       <!-- theme colors -->
       <div v-for="theme in themes" :key="theme" class="text-center">
         <span
+          :class="{ selected: currentTheme === theme }"
           class="toolbox__theme-dot"
           :style="{ backgroundColor: theme }"
           @click="changeTheme(theme)"
@@ -60,6 +66,10 @@ const changeTheme = (theme) => {
     margin-top: 20px;
     border-radius: 50%;
     cursor: pointer;
+    transition: box-shadow var(--transition-time);
+    &.selected {
+      box-shadow: 0 0 15px 5px var(--primary-color);
+    }
   }
   @media print {
     /* hide the button while printing */

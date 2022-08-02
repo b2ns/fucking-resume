@@ -37,6 +37,7 @@ const { title, icon } = toRefs(props);
     color: var(--text-color-invert);
     font-size: var(--fs-lg);
     transform: skewX(var(--banner-deg));
+    transition: background-color var(--transition-time);
   }
   &__icon {
     margin-right: 3mm;
