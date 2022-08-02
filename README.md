@@ -2,7 +2,7 @@
 
 resume template I use
 
-<p align="center">
+<p>
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/red1.png" alt="screenshot" style="width: 32%;">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/cyan1.png" alt="screenshot" style="width: 32%;">
 <img src="https://cdn.jsdelivr.net/gh/b2ns/fucking-resume/assets/purple1.png" alt="screenshot" style="width: 32%;">
