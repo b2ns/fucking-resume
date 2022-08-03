@@ -15,6 +15,7 @@ const {
   skill,
   work,
   project,
+  other,
   showPoweredBy,
 } = data;
 </script>
@@ -115,11 +116,11 @@ const {
               <div class="resume__item" v-html="item"></div>
             </td>
             <td>
-              <div
+              <p
                 v-if="index + 1 < skill.list.length"
                 class="resume__item"
                 v-html="skill.list[index + 1]"
-              ></div>
+              ></p>
             </td></tr
         ></template>
       </table>
@@ -173,6 +174,20 @@ const {
           v-html="ev"
         ></p>
       </div>
+    </Banner>
+
+    <!-- other -->
+    <Banner
+      v-if="other && other.show !== false"
+      :title="other.title"
+      :icon="other.icon"
+    >
+      <p
+        v-for="(item, index) of other.list"
+        :key="index"
+        class="resume__item"
+        v-html="item"
+      ></p>
     </Banner>
 
     <!-- footer -->

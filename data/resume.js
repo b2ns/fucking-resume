@@ -13,7 +13,7 @@ export default {
   job: { value: '职业法师', icon: 'r-dot-circle' },
   phone: { value: '110119911**', icon: 'phone' },
   // optional
-  city: { value: '天际省', icon: 'map-marker' },
+  city: { value: '天际省', icon: 'location-dot' },
   email: { value: 'dragonborn@mail.com', icon: 'envelope' },
   // optional
   link: {
@@ -81,6 +81,7 @@ export default {
       },
     ],
   },
+
   project: {
     title: '项目经历',
     icon: 'code',
@@ -120,5 +121,13 @@ export default {
         ],
       },
     ],
+  },
+
+  // optional
+  other: {
+    show: false,
+    title: '其他',
+    icon: 'star-of-life',
+    list: ['凑字数吧'],
   },
 };
