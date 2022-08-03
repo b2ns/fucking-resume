@@ -34,13 +34,13 @@ export default {
     list: [
       {
         college: '冬堡魔法学院',
-        time: '2070.9-2074.7',
+        time: '2070.9 - 2074.7',
         major: '毁灭系',
         degree: '大法师',
       },
       {
         college: '高吼峰修道院',
-        time: '2066.9-2070.7',
+        time: '2066.9 - 2070.7',
         major: '龙吼养成',
         degree: '龙裔',
       },
@@ -67,7 +67,7 @@ export default {
     list: [
       {
         company: '法师公会',
-        time: '2077.7-至今',
+        time: '2077.7 - 至今',
         // optional
         department: '研修部',
         // optional
@@ -77,7 +77,7 @@ export default {
       },
       {
         company: '雪漫城',
-        time: '2074.7-2077.7',
+        time: '2074.7 - 2077.7',
         department: '屠龙部',
         title: '屠龙人',
         events: ['完成领主巴尔古夫指派的主线任务，并接支线剧情任务'],
