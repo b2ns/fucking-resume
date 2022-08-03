@@ -38,7 +38,10 @@ const {
             <span class="resume__header-job">{{ job.value }}</span>
           </p>
         </div>
-        <table class="resume__header-right">
+        <table
+          class="resume__header-right"
+          :class="{ 'with-avatar': avatar && avatar.show !== false }"
+        >
           <tr>
             <td>
               <p class="resume__text-wrapper">
@@ -210,7 +213,10 @@ const {
       font-size: var(--header-name-size);
     }
     &-right {
-      margin-left: 12mm;
+      margin-left: 25mm;
+      &.with-avatar {
+        margin-left: 12mm;
+      }
       td {
         padding: 1.5mm 3mm;
       }
