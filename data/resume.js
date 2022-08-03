@@ -28,6 +28,7 @@ export default {
   showPoweredBy: false,
 
   education: {
+    order: 1,
     title: '教育经历',
     icon: 'graduation-cap',
     list: [
@@ -48,6 +49,7 @@ export default {
 
   // optional
   skill: {
+    order: 2,
     title: '专业技能',
     icon: 'wrench',
     list: [
@@ -59,6 +61,7 @@ export default {
   },
 
   work: {
+    order: 3,
     title: '工作经历',
     icon: 'briefcase',
     list: [
@@ -83,6 +86,7 @@ export default {
   },
 
   project: {
+    order: 4,
     title: '项目经历',
     icon: 'code',
     list: [
@@ -125,6 +129,7 @@ export default {
 
   // optional
   other: {
+    order: 5,
     show: false,
     title: '其他',
     icon: 'star-of-life',

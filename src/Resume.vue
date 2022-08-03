@@ -18,6 +18,25 @@ const {
   other,
   showPoweredBy,
 } = data;
+
+const resumeEntries = {
+  education,
+  skill,
+  work,
+  project,
+  other,
+};
+// bind key to the object
+for (const key in resumeEntries) {
+  if (resumeEntries[key]) {
+    resumeEntries[key].key = key;
+  }
+}
+
+const resumeItems = Object.keys(resumeEntries)
+  .map((key) => resumeEntries[key])
+  .filter(Boolean)
+  .sort((a, b) => a.order - b.order);
 </script>
 
 <template>
@@ -83,112 +102,118 @@ const {
       />
     </header>
 
-    <!-- education -->
-    <Banner
-      v-if="education && education.show !== false"
-      :title="education.title"
-      :icon="education.icon"
-    >
-      <table
-        v-for="(item, index) of education.list"
-        :key="index"
-        class="resume__item w100 text-center"
+    <template v-for="resumeItem of resumeItems" :key="resumeItem.key">
+      <!-- education -->
+      <Banner
+        v-if="resumeItem.key === 'education' && resumeItem.show !== false"
+        :title="resumeItem.title"
+        :icon="resumeItem.icon"
       >
-        <tr>
-          <td class="text-left">{{ item.college }}</td>
-          <td>{{ item.time }}</td>
-          <td>{{ item.major }}</td>
-          <td class="text-right">{{ item.degree }}</td>
-        </tr>
-      </table>
-    </Banner>
-
-    <!-- skill -->
-    <Banner
-      v-if="skill && skill.show !== false"
-      :title="skill.title"
-      :icon="skill.icon"
-    >
-      <table class="w100">
-        <template v-for="(item, index) of skill.list" :key="index">
-          <tr v-if="(index & 1) === 0">
-            <td>
-              <div class="resume__item" v-html="item"></div>
-            </td>
-            <td>
-              <p
-                v-if="index + 1 < skill.list.length"
-                class="resume__item"
-                v-html="skill.list[index + 1]"
-              ></p>
-            </td></tr
-        ></template>
-      </table>
-    </Banner>
-
-    <!-- work -->
-    <Banner
-      v-if="work && work.show !== false"
-      :title="work.title"
-      :icon="work.icon"
-    >
-      <div v-for="(item, index) of work.list" :key="index" class="resume__item">
-        <table class="w100 text-center">
+        <table
+          v-for="(item, index) of resumeItem.list"
+          :key="index"
+          class="resume__item w100 text-center"
+        >
           <tr>
-            <td class="text-left">{{ item.company }}</td>
+            <td class="text-left">{{ item.college }}</td>
             <td>{{ item.time }}</td>
-            <td v-if="item.department">{{ item.department }}</td>
-            <td v-if="item.title" class="text-right">{{ item.title }}</td>
+            <td>{{ item.major }}</td>
+            <td class="text-right">{{ item.degree }}</td>
           </tr>
         </table>
-        <p
-          v-if="item.events"
-          v-for="(ev, idx) of item.events"
-          :key="idx"
-          class="resume__item"
-          v-html="ev"
-        ></p>
-      </div>
-    </Banner>
+      </Banner>
 
-    <!-- project -->
-    <Banner
-      v-if="project && project.show !== false"
-      :title="project.title"
-      :icon="project.icon"
-    >
-      <div
-        v-for="(item, index) of project.list"
-        :key="index"
-        class="resume__item"
+      <!-- skill -->
+      <Banner
+        v-if="resumeItem.key === 'skill' && resumeItem.show !== false"
+        :title="resumeItem.title"
+        :icon="resumeItem.icon"
       >
-        <div class="flex">
-          <span>{{ item.name }}</span>
-          <span class="flex-item-1" />
-          <span class="resume__project-desc">{{ item.desc }}</span>
-        </div>
-        <p
-          v-for="(ev, idx) of item.events"
-          :key="idx"
-          class="resume__item"
-          v-html="ev"
-        ></p>
-      </div>
-    </Banner>
+        <table class="w100">
+          <template v-for="(item, index) of resumeItem.list" :key="index">
+            <tr v-if="(index & 1) === 0">
+              <td>
+                <p class="resume__item" v-html="item"></p>
+              </td>
+              <td>
+                <p
+                  v-if="index + 1 < resumeItem.list.length"
+                  class="resume__item"
+                  v-html="resumeItem.list[index + 1]"
+                ></p>
+              </td></tr
+          ></template>
+        </table>
+      </Banner>
 
-    <!-- other -->
-    <Banner
-      v-if="other && other.show !== false"
-      :title="other.title"
-      :icon="other.icon"
-    >
-      <p
-        v-for="(item, index) of other.list"
-        :key="index"
-        class="resume__item"
-        v-html="item"
-      ></p>
-    </Banner>
+      <!-- work -->
+      <Banner
+        v-if="resumeItem.key === 'work' && resumeItem.show !== false"
+        :title="resumeItem.title"
+        :icon="resumeItem.icon"
+      >
+        <div
+          v-for="(item, index) of resumeItem.list"
+          :key="index"
+          class="resume__item"
+        >
+          <table class="w100 text-center">
+            <tr>
+              <td class="text-left">{{ item.company }}</td>
+              <td>{{ item.time }}</td>
+              <td v-if="item.department">{{ item.department }}</td>
+              <td v-if="item.title" class="text-right">{{ item.title }}</td>
+            </tr>
+          </table>
+          <p
+            v-if="item.events"
+            v-for="(ev, idx) of item.events"
+            :key="idx"
+            class="resume__item"
+            v-html="ev"
+          ></p>
+        </div>
+      </Banner>
+
+      <!-- project -->
+      <Banner
+        v-if="resumeItem.key === 'project' && resumeItem.show !== false"
+        :title="resumeItem.title"
+        :icon="resumeItem.icon"
+      >
+        <div
+          v-for="(item, index) of resumeItem.list"
+          :key="index"
+          class="resume__item"
+        >
+          <div class="flex">
+            <span>{{ item.name }}</span>
+            <span class="flex-item-1" />
+            <span class="resume__project-desc">{{ item.desc }}</span>
+          </div>
+          <p
+            v-for="(ev, idx) of item.events"
+            :key="idx"
+            class="resume__item"
+            v-html="ev"
+          ></p>
+        </div>
+      </Banner>
+
+      <!-- other -->
+      <Banner
+        v-if="resumeItem.key === 'other' && resumeItem.show !== false"
+        :title="resumeItem.title"
+        :icon="resumeItem.icon"
+      >
+        <p
+          v-for="(item, index) of resumeItem.list"
+          :key="index"
+          class="resume__item"
+          v-html="item"
+        ></p>
+      </Banner>
+    </template>
 
     <!-- footer -->
     <footer class="resume__footer flex flex-middle flex-right">
